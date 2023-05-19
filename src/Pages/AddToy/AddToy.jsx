@@ -1,15 +1,62 @@
 import { useContext } from "react";
 import useTitle from "../../Hooks/useTitle";
 import { Context } from "../../AuthProviders/Providers";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   useTitle("Add a Toy");
   const { user } = useContext(Context);
 
+  const addToy = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = user?.name;
+    const email = user?.email;
+    const toyName = form.toyName.value;
+    const photoURL = form.photoURL.value;
+    const category = form.category.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
+    const toys = {
+      name,
+      email,
+      toyName,
+      photoURL,
+      category,
+      price,
+      rating,
+      quantity,
+      description,
+    };
+    console.log(toys);
+
+    fetch("https://doctor-car-server.vercel.app/toys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toys),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Toy Added Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
   return (
     <div className="max-w-3xl mx-auto bg-white p-8 shadow-md my-5">
       <h2 className="text-3xl font-bold mb-6">Toy Form</h2>
-      <form>
+      <form onSubmit={addToy}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700">
             Name:
@@ -49,15 +96,32 @@ const AddToy = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="subCategory" className="block text-gray-700">
-            Sub-category:
+          <label htmlFor="photoURL" className="block text-gray-700">
+            Toy Photo URL:
           </label>
           <input
             type="text"
-            id="subCategory"
+            id="photoURL"
+            name="photoURL"
             required
             className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
           />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="category" className="block text-gray-700">
+            Category:
+          </label>
+          <select
+            id="category"
+            name="category"
+            required
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+          >
+            <option value="">Select Category</option>
+            <option value="action">Action Figures</option>
+            <option value="plush">Plush Toys</option>
+            <option value="construction">Construction Sets</option>
+          </select>
         </div>
         <div className="mb-4">
           <label htmlFor="price" className="block text-gray-700">
