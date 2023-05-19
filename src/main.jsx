@@ -10,6 +10,7 @@ import Registration from "./Pages/User/Registration";
 import Providers from "./AuthProviders/Providers";
 import "sweetalert2/dist/sweetalert2.css";
 import AddToy from "./Pages/AddToy/AddToy";
+import AllToys from "./Pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/addtoy",
         element: <AddToy></AddToy>,
+      },
+      {
+        path: "/alltoys",
+        element: <AllToys></AllToys>,
+        loader: () => fetch("http://localhost:5000/toys"),
       },
     ],
   },

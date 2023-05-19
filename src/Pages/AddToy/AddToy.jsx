@@ -10,7 +10,7 @@ const AddToy = () => {
   const addToy = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = user?.name;
+    const name = user?.displayName;
     const email = user?.email;
     const toyName = form.toyName.value;
     const photoURL = form.photoURL.value;
@@ -30,9 +30,8 @@ const AddToy = () => {
       quantity,
       description,
     };
-    console.log(toys);
 
-    fetch("https://doctor-car-server.vercel.app/toys", {
+    fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -41,7 +40,6 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             icon: "success",
@@ -49,6 +47,7 @@ const AddToy = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          event.target.reset();
         }
       });
   };
@@ -118,9 +117,9 @@ const AddToy = () => {
             className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
           >
             <option value="">Select Category</option>
-            <option value="action">Action Figures</option>
-            <option value="plush">Plush Toys</option>
-            <option value="construction">Construction Sets</option>
+            <option value="Action Figures">Action Figures</option>
+            <option value="Plush Toys">Plush Toys</option>
+            <option value="Construction Sets">Construction Sets</option>
           </select>
         </div>
         <div className="mb-4">
