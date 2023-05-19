@@ -3,7 +3,11 @@ import three from "/3.jpg";
 const Explore = () => {
   return (
     <section className="py-10">
-      <div className="container mx-auto">
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-center"
+        className="container mx-auto"
+      >
         <div className="flex flex-col md:flex-row items-center justify-center">
           <div className="md:w-1/2">
             <img src={three} alt="Video Game Toys" className="rounded-lg" />

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Registration = () => {
+  useTitle("Register");
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <div className="bg-white rounded-lg shadow-md p-8">
@@ -52,7 +54,7 @@ const Registration = () => {
           </div>
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg w-full"
+            className="btn btn-outline btn-warning text-white font-bold py-2 px-4 rounded-lg w-full"
           >
             Register
           </button>

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle("LogIn");
+
   return (
     <div className="flex items-center justify-center  bg-gray-200">
       <div className="bg-white rounded-lg shadow-md my-10 p-8">

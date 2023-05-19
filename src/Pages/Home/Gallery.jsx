@@ -11,7 +11,13 @@ import nine from "/9.jpg";
 const Gallery = () => {
   return (
     <section className="py-10">
-      <div className="container mx-auto">
+      <div
+        data-aos="fade-zoom-in"
+        data-aos-offset="200"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="600"
+        className="container mx-auto"
+      >
         <h2 className="text-3xl text-center font-bold mb-6">
           Explore Our Collection
         </h2>

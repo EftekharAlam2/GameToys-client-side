@@ -1,13 +1,13 @@
 const Banner = () => {
   return (
-    <section className="bg-blue-600 py-10">
+    <section
+      data-aos="flip-left"
+      data-aos-delay="100"
+      data-aos-anchor=".example-selector"
+      className="bg-blue-600 py-10"
+    >
       <div className="container mx-auto text-center">
-        <h1
-          data-aos="flip-left"
-          data-aos-delay="100"
-          data-aos-anchor=".example-selector"
-          className="text-4xl text-white font-bold mb-4"
-        >
+        <h1 className="text-4xl text-white font-bold mb-4">
           Welcome to GameToys
         </h1>
         <p className="text-white text-lg mb-6">
