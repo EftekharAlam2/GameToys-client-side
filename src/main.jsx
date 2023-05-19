@@ -8,6 +8,7 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import Login from "./Pages/User/Login";
 import Registration from "./Pages/User/Registration";
 import Providers from "./AuthProviders/Providers";
+import "sweetalert2/dist/sweetalert2.css";
 
 const router = createBrowserRouter([
   {
