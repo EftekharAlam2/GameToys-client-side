@@ -13,15 +13,21 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
+
       <li>
         <Link to="/">All Toys</Link>
       </li>
-      <li>
-        <Link to="/">My Toys</Link>
-      </li>
-      <li>
-        <Link to="/">Add A Toy</Link>
-      </li>
+
+      {user && (
+        <li>
+          <Link to="/">My Toys</Link>
+        </li>
+      )}
+      {user && (
+        <li>
+          <Link to="/">Add A Toy</Link>
+        </li>
+      )}
       <li>
         <Link to="/">Blogs</Link>
       </li>
@@ -88,9 +94,6 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-        {/* <Link to="/login">
-          <button className="btn btn-outline btn-warning">Login</button>
-        </Link> */}
       </div>
     </div>
   );
