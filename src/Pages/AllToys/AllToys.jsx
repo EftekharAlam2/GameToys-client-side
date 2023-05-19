@@ -1,24 +1,17 @@
+import { useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import { useEffect, useState } from "react";
 
 const AllToys = () => {
   useTitle("All Toy");
 
-  const [currentToys, setToys] = useState("");
+  const data = useLoaderData();
+  const currentToys = data.totalToys;
+
   const [currentPage, setCurrentPage] = useState(0);
   const [toys, setToysData] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/totalToys", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setToys(data.totalToys);
-      });
-  }, []);
-
-  const itemsPerPage = 20;
+  const itemsPerPage = 2;
   const totalPages = Math.ceil(currentToys / itemsPerPage);
 
   const pageNumbers = [...Array(totalPages).keys()];
@@ -34,9 +27,28 @@ const AllToys = () => {
     fetchData();
   }, [currentPage, itemsPerPage]);
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredToys = toys.filter((toy) =>
+    toy.toyName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
   return (
     <>
       <div className="max-w-4xl my-10 mx-auto">
+        <div className="mb-4">
+          <input
+            type="text"
+            placeholder="Search by toy name"
+            value={searchQuery}
+            onChange={handleSearch}
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+          />
+        </div>
         <table className="w-full bg-white border border-gray-300">
           <thead>
             <tr className="bg-blue-500 text-white">
@@ -49,7 +61,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {toys.map((toy) => (
+            {filteredToys.map((toy) => (
               <tr key={toy._id} className="border-t">
                 <td className="py-2 px-4">{toy.name}</td>
                 <td className="py-2 px-4">{toy.toyName}</td>
