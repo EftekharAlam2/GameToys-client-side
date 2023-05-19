@@ -9,6 +9,7 @@ import Login from "./Pages/User/Login";
 import Registration from "./Pages/User/Registration";
 import Providers from "./AuthProviders/Providers";
 import "sweetalert2/dist/sweetalert2.css";
+import AddToy from "./Pages/AddToy/AddToy";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/addtoy",
+        element: <AddToy></AddToy>,
       },
     ],
   },
