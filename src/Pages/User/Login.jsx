@@ -22,7 +22,6 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         Swal.fire({
-          position: "top-center",
           icon: "success",
           title: "Login Successfully",
           showConfirmButton: false,
@@ -47,6 +46,12 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => {

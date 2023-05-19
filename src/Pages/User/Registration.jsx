@@ -40,7 +40,6 @@ const Registration = () => {
             console.log(error.message);
           });
         Swal.fire({
-          position: "top-center",
           icon: "success",
           title: "Registration Successfully",
           showConfirmButton: false,

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import logo from "/logo.png";
+import { useContext, useState } from "react";
+import { Context } from "../AuthProviders/Providers";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(Context);
+
+  const [showName, setShowName] = useState(false);
+
   const navItems = (
     <>
       <li>
@@ -54,10 +60,37 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
-      <div className="navbar-end">
-        <Link to="/login">
+      <div
+        className="navbar-end"
+        onMouseEnter={() => setShowName(true)}
+        onMouseLeave={() => setShowName(false)}
+      >
+        <div className="pr-4 relative">
+          {user && (
+            <img className=" w-12 rounded-full" src={user.photoURL} alt="" />
+          )}
+          {showName && user && (
+            <div className="absolute top-0 left-0 bg-white rounded-md py-1 px-2 shadow-md">
+              {user.displayName}
+            </div>
+          )}
+        </div>
+        <div>
+          {user ? (
+            <div>
+              <button className="btn btn-outline btn-warning" onClick={logOut}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-outline btn-warning">Login</button>
+            </Link>
+          )}
+        </div>
+        {/* <Link to="/login">
           <button className="btn btn-outline btn-warning">Login</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
