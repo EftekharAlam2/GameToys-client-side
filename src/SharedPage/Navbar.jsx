@@ -60,12 +60,12 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
-      <div
-        className="navbar-end"
-        onMouseEnter={() => setShowName(true)}
-        onMouseLeave={() => setShowName(false)}
-      >
-        <div className="pr-4 relative">
+      <div className="navbar-end">
+        <div
+          className="pr-4 relative"
+          onMouseEnter={() => setShowName(true)}
+          onMouseLeave={() => setShowName(false)}
+        >
           {user && (
             <img className=" w-12 rounded-full" src={user.photoURL} alt="" />
           )}
