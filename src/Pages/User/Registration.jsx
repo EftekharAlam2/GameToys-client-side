@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import { useContext } from "react";
 import { Context } from "../../AuthProviders/Providers";
@@ -6,6 +6,11 @@ import Swal from "sweetalert2";
 
 const Registration = () => {
   useTitle("Register");
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
 
   const { createUser, updateUser } = useContext(Context);
 
@@ -42,6 +47,7 @@ const Registration = () => {
           timer: 1500,
         });
         event.target.reset();
+        navigate(from, { replace: true });
       })
       .catch(() => {});
   };
