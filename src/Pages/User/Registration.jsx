@@ -45,8 +45,8 @@ const Registration = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        event.target.reset();
         navigate(from, { replace: true });
+        event.target.reset();
       })
       .catch(() => {});
   };

@@ -7,9 +7,9 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(Context);
   const location = useLocation();
 
-  if (!user) {
+  if (!user && !loading) {
     Swal.fire({
-      title: "You have to log in first to view details",
+      title: "You have to log in first to Process",
       width: 600,
       padding: "3em",
       color: "#716add",

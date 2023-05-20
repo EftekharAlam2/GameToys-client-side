@@ -15,7 +15,7 @@ const AddToy = () => {
     const toyName = form.toyName.value;
     const photoURL = form.photoURL.value;
     const category = form.category.value;
-    const price = form.price.value;
+    const price = parseInt(form.price.value);
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
@@ -66,7 +66,7 @@ const AddToy = () => {
             name="name"
             defaultValue={user?.displayName}
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <div className="mb-4">
@@ -79,7 +79,7 @@ const AddToy = () => {
             name="email"
             defaultValue={user?.email}
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <div className="mb-4">
@@ -91,7 +91,7 @@ const AddToy = () => {
             id="toyName"
             name="toyName"
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <div className="mb-4">
@@ -103,7 +103,7 @@ const AddToy = () => {
             id="photoURL"
             name="photoURL"
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <div className="mb-4">
@@ -114,7 +114,7 @@ const AddToy = () => {
             id="category"
             name="category"
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           >
             <option value="">Select Category</option>
             <option value="Action Figures">Action Figures</option>
@@ -131,7 +131,7 @@ const AddToy = () => {
             id="price"
             name="price"
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <div className="mb-4">
@@ -143,7 +143,7 @@ const AddToy = () => {
             id="rating"
             name="rating"
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <div className="mb-4">
@@ -155,7 +155,7 @@ const AddToy = () => {
             id="quantity"
             name="quantity"
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <div className="mb-4">
@@ -166,7 +166,7 @@ const AddToy = () => {
             id="description"
             name="description"
             required
-            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
+            className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4 bg-slate-100"
           />
         </div>
         <button

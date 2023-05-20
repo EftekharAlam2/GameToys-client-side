@@ -20,7 +20,7 @@ const Navbar = () => {
 
       {user && (
         <li>
-          <Link to="/">My Toys</Link>
+          <Link to="/mytoys">My Toys</Link>
         </li>
       )}
       {user && (
