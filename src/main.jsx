@@ -15,6 +15,7 @@ import ToyDetails from "./SharedPage/ToyDetails";
 import PrivateRoute from "./Routes/PrivateRoute";
 import MyToy from "./Pages/MyToy/MyToy";
 import UpdateToy from "./Pages/MyToy/UpdateToy";
+import Blogs from "./Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/toys/${params.id}`),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
     ],
   },
