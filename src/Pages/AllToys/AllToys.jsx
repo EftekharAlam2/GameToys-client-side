@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import { useEffect, useState } from "react";
 
@@ -11,7 +11,7 @@ const AllToys = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [toys, setToysData] = useState([]);
 
-  const itemsPerPage = 2;
+  const itemsPerPage = 20;
   const totalPages = Math.ceil(currentToys / itemsPerPage);
 
   const pageNumbers = [...Array(totalPages).keys()];
@@ -69,9 +69,11 @@ const AllToys = () => {
                 <td className="py-2 px-4">{toy.price}</td>
                 <td className="py-2 px-4">{toy.quantity}</td>
                 <td className="py-2 px-4">
-                  <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">
-                    View Details
-                  </button>
+                  <Link to={`/toydetails/${toy._id}`}>
+                    <button className="btn btn-outline btn-warning text-white py-2 px-4 rounded-lg">
+                      View Details
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}

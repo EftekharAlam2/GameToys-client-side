@@ -23,7 +23,7 @@ const Discover = () => {
               collection is sure to delight you. Explore the characters, iconic
               moments, and artistry that make video game toys so special.
             </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg mb-5">
               Learn More
             </button>
           </div>

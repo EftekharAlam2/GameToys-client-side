@@ -11,6 +11,7 @@ import Providers from "./AuthProviders/Providers";
 import "sweetalert2/dist/sweetalert2.css";
 import AddToy from "./Pages/AddToy/AddToy";
 import AllToys from "./Pages/AllToys/AllToys";
+import ToyDetails from "./SharedPage/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
         path: "/alltoys",
         element: <AllToys></AllToys>,
         loader: () => fetch("http://localhost:5000/totalToys"),
+      },
+      {
+        path: "/toydetails/:id",
+        element: <ToyDetails></ToyDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/toys/${params.id}`),
       },
     ],
   },
