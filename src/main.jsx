@@ -12,6 +12,7 @@ import "sweetalert2/dist/sweetalert2.css";
 import AddToy from "./Pages/AddToy/AddToy";
 import AllToys from "./Pages/AllToys/AllToys";
 import ToyDetails from "./SharedPage/ToyDetails";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/toydetails/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/toys/${params.id}`),
       },
