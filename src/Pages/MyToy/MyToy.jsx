@@ -18,6 +18,23 @@ const MyToy = () => {
       .then((data) => setToysData(data));
   }, []);
 
+  const handleDelete = (id) => {
+    const proceed = confirm("Are You sure you want to delete");
+    if (proceed) {
+      fetch(`http://localhost:5000/toys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("deleted successful");
+            const remaining = toysData.filter((toys) => toys._id !== id);
+            setToysData(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div className="max-w-4xl my-10 mx-auto">
       <table className="w-full bg-white border border-gray-300">
@@ -56,7 +73,10 @@ const MyToy = () => {
                 </Link>
               </td>
               <td className="py-2 px-4">
-                <button className="btn btn-outline btn-error text-white py-2 px-4 rounded-lg">
+                <button
+                  onClick={() => handleDelete(toy._id)}
+                  className="btn btn-outline btn-error text-white py-2 px-4 rounded-lg"
+                >
                   Delete
                 </button>
               </td>
