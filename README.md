@@ -1,4 +1,4 @@
-## [GameToys](https://video-gaming-toys.web.app/)
+## [GameToys (Click)](https://video-gaming-toys.web.app/)
 
 ## Features
 
