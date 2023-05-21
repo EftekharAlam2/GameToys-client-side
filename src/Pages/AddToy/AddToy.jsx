@@ -31,13 +31,16 @@ const AddToy = () => {
       description,
     };
 
-    fetch("http://localhost:5000/toys", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(toys),
-    })
+    fetch(
+      "https://b7a11-toy-marketplace-server-side-eftekhar-alam2.vercel.app/toys",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(toys),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {

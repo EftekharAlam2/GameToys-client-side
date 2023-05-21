@@ -23,13 +23,16 @@ const UpdateToy = () => {
       description,
     };
 
-    fetch(`http://localhost:5000/toys/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedToy),
-    })
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-eftekhar-alam2.vercel.app/toys/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedToy),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

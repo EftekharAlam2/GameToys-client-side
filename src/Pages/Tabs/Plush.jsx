@@ -5,9 +5,12 @@ const Plush = () => {
   const [toysData, setToysData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys", {
-      method: "GET",
-    })
+    fetch(
+      "https://b7a11-toy-marketplace-server-side-eftekhar-alam2.vercel.app/toys",
+      {
+        method: "GET",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         const plushToys = data.filter((toy) => toy.category === "Plush Toys");

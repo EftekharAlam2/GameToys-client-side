@@ -19,7 +19,7 @@ const AllToys = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/toys?page=${currentPage}&limit=${itemsPerPage}`
+        `https://b7a11-toy-marketplace-server-side-eftekhar-alam2.vercel.app/toys?page=${currentPage}&limit=${itemsPerPage}`
       );
       const data = await response.json();
       setToysData(data);
@@ -49,36 +49,38 @@ const AllToys = () => {
             className="w-full rounded-lg border-gray-300 focus:outline-none focus:border-blue-500 py-2 px-4"
           />
         </div>
-        <table className="w-full bg-white border border-gray-300">
-          <thead>
-            <tr className="bg-blue-500 text-white">
-              <th className="py-2 px-4">Seller Name</th>
-              <th className="py-2 px-4">Toy Name</th>
-              <th className="py-2 px-4">Category</th>
-              <th className="py-2 px-4">Price</th>
-              <th className="py-2 px-4">Quantity</th>
-              <th className="py-2 px-4"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredToys.map((toy) => (
-              <tr key={toy._id} className="border-t">
-                <td className="py-2 px-4">{toy.name}</td>
-                <td className="py-2 px-4">{toy.toyName}</td>
-                <td className="py-2 px-4">{toy.category}</td>
-                <td className="py-2 px-4">{toy.price}</td>
-                <td className="py-2 px-4">{toy.quantity}</td>
-                <td className="py-2 px-4">
-                  <Link to={`/toydetails/${toy._id}`}>
-                    <button className="btn btn-outline btn-warning text-white py-2 px-4 rounded-lg">
-                      View Details
-                    </button>
-                  </Link>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full bg-white border border-gray-300">
+            <thead>
+              <tr className="bg-blue-500 text-white">
+                <th className="py-2 px-4">Seller Name</th>
+                <th className="py-2 px-4">Toy Name</th>
+                <th className="py-2 px-4">Category</th>
+                <th className="py-2 px-4">Price</th>
+                <th className="py-2 px-4">Quantity</th>
+                <th className="py-2 px-4"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredToys.map((toy) => (
+                <tr key={toy._id} className="border-t">
+                  <td className="py-2 px-4">{toy.name}</td>
+                  <td className="py-2 px-4">{toy.toyName}</td>
+                  <td className="py-2 px-4">{toy.category}</td>
+                  <td className="py-2 px-4">{toy.price}</td>
+                  <td className="py-2 px-4">{toy.quantity}</td>
+                  <td className="py-2 px-4">
+                    <Link to={`/toydetails/${toy._id}`}>
+                      <button className="btn btn-outline btn-warning text-white py-2 px-4 rounded-lg">
+                        View Details
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className="flex justify-center mb-4 pt-4">
         {pageNumbers.map((number) => (
