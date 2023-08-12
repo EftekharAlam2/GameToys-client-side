@@ -1,82 +1,47 @@
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { JackInTheBox } from "react-awesome-reveal";
-
 const ContactUs = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_YOUR_SERVICE_ID,
-        import.meta.env.VITE_YOUR_TEMPLATE_ID,
-        form.current,
-        import.meta.env.VITE_YOUR_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          e.target.reset();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-      <div className="py-8" id="contact">
-        <JackInTheBox>
-          <div className="container mx-auto px-4">
-            <div className="md:w-3/4 lg:w-2/3 mx-auto">
-              <form
-                className="bg-white shadow-md rounded-lg p-6 mt-12 flex flex-col gap-8"
-                ref={form}
-                onSubmit={sendEmail}
-              >
-                <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <input
-                      type="text"
-                      name="from_name"
-                      id="name"
-                      className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
-                      placeholder="Your Name"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      name="from_email"
-                      id="email"
-                      className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
-                      placeholder="Your Email"
-                    />
-                  </div>
-                </div>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="border border-gray-300 rounded-lg py-2 px-4 w-full h-32 resize-none mt-4 focus:outline-none focus:border-indigo-500"
-                  placeholder="Your Message"
-                ></textarea>
-                <button
-                  className="btn btn-outline btn-accent mt-4 w-full"
-                  type="submit"
-                  value="Send"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+      <div
+        data-aos="zoom-in-up"
+        data-aos-duration="3000"
+        className="bg-white  rounded-lg p-8 md:mt-12"
+      >
+        <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+        <form className="space-y-6">
+          <div>
+            <input
+              type="text"
+              name="from_name"
+              id="name"
+              className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
+              placeholder="Your Name"
+            />
           </div>
-        </JackInTheBox>
+          <div>
+            <input
+              type="email"
+              name="from_email"
+              id="email"
+              className="border border-gray-300 rounded-lg py-2 px-4 w-full focus:outline-none focus:border-indigo-500"
+              placeholder="Your Email"
+            />
+          </div>
+          <textarea
+            id="message"
+            name="message"
+            className="border border-gray-300 rounded-lg py-2 px-4 w-full h-32 resize-none focus:outline-none focus:border-indigo-500"
+            placeholder="Your Message"
+          ></textarea>
+          <button
+            className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-6 rounded-md w-full"
+            type="submit"
+            value="Send"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
-      <div className="py-3">
+      <div data-aos="zoom-in" data-aos-duration="3000" className="py-3">
         <div className="mapouter">
           <div className="gmap_canvas">
             <iframe
