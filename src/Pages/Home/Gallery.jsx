@@ -10,19 +10,25 @@ import nine from "/9.jpg";
 
 const Gallery = () => {
   return (
-    <section className="py-10">
-      <div
-        data-aos="fade-zoom-in"
-        data-aos-offset="200"
-        data-aos-easing="ease-in-sine"
-        data-aos-duration="600"
-        className="container mx-auto"
-      >
-        <h2 className="text-3xl text-center font-bold mb-6">
+    <section
+      data-aos="zoom-in"
+      data-aos-duration="3000"
+      data-aos-anchor=".example-selector"
+      className="bg-gray-100 py-10"
+    >
+      <div className="container mx-auto">
+        <h1 className="text-5xl text-center font-semibold mb-4">
+          Welcome to GameToys
+        </h1>
+        <p className=" text-center text-xl mb-6">
+          Explore a world of video game toys and collectibles
+        </p>
+
+        <h2 className="text-xl  text-center font-bold mb-6">
           Explore Our Collection
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          <div className="bg-gray-200 h-48">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="bg-gray-200 h-48 ">
             <img src={one} alt="" />
           </div>
           <div className="bg-gray-200 h-48">
