@@ -4,7 +4,7 @@ const ContactUs = () => {
       <div
         data-aos="zoom-in-up"
         data-aos-duration="3000"
-        className="bg-white  rounded-lg p-8 md:mt-12"
+        className="bg-white  rounded-lg p-8"
       >
         <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
         <form className="space-y-6">

@@ -1,0 +1,7 @@
+.skill-card {
+  transition: transform 0.8s ease;
+}
+
+.hovered {
+  transform: scale(1.4);
+}

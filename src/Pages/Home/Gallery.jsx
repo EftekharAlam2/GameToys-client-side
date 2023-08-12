@@ -7,8 +7,16 @@ import six from "/6.jpg";
 import seven from "/7.jpg";
 import eight from "/8.jpg";
 import nine from "/9.jpg";
+import "./styles.css";
+import { useState } from "react";
 
 const Gallery = () => {
+  const [hoveredPicture, setHoveredPicture] = useState(null);
+
+  const handlePictureHover = (PictureName) => {
+    setHoveredPicture(PictureName);
+  };
+
   return (
     <section
       data-aos="zoom-in"
@@ -28,40 +36,112 @@ const Gallery = () => {
           Explore Our Collection
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div className="bg-gray-200 h-48 ">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "1" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("1")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={one} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "2" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("2")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={two} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "3" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("3")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={three} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "4" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("4")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={four} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "5" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("5")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={five} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "6" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("6")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={six} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "7" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("7")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={seven} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "8" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("8")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={eight} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "9" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("9")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={nine} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "10" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("10")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={nine} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "11" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("11")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={nine} alt="" />
           </div>
-          <div className="bg-gray-200 h-48">
+          <div
+            className={`bg-gray-200 h-48 skill-card ${
+              hoveredPicture === "12" ? "hovered" : ""
+            }`}
+            onMouseEnter={() => handlePictureHover("12")}
+            onMouseLeave={() => handlePictureHover(null)}
+          >
             <img src={nine} alt="" />
           </div>
         </div>
