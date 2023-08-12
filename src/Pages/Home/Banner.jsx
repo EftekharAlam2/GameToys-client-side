@@ -1,8 +1,8 @@
 const Banner = () => {
   return (
     <section
-      data-aos="flip-left"
-      data-aos-delay="100"
+      data-aos="zoom-in"
+      data-aos-duration="3000"
       data-aos-anchor=".example-selector"
       className="bg-blue-600 py-10"
     >
