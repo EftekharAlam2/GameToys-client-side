@@ -22,7 +22,7 @@ const Gallery = () => {
       data-aos="zoom-in"
       data-aos-duration="3000"
       data-aos-anchor=".example-selector"
-      className="bg-gray-100 py-10"
+      className="bg-blue-100 py-10"
     >
       <div className="container mx-auto">
         <h1 className="text-5xl text-center font-semibold mb-4">
