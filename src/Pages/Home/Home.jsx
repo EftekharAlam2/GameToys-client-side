@@ -5,6 +5,7 @@ import ContactUs from "./ContactUs";
 import Discover from "./Discover";
 import Explore from "./Explore";
 import Gallery from "./Gallery";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   useTitle("Home");
@@ -16,6 +17,7 @@ const Home = () => {
       <Categories></Categories>
       <Explore></Explore>
       <Discover></Discover>
+      <Testimonials></Testimonials>
       <ContactUs></ContactUs>
     </div>
   );

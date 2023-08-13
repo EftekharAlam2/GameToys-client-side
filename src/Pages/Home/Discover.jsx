@@ -5,7 +5,7 @@ const Discover = () => {
     <section
       data-aos="slide-left"
       data-aos-duration="3000"
-      className="bg-gray-100 py-10"
+      className="bg-blue-100 py-10"
     >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center">
