@@ -1,6 +1,6 @@
 import useTitle from "../../Hooks/useTitle";
 import Categories from "../Tabs/Categories";
-import BannerOne from "./BannerOne";
+// import BannerOne from "./BannerOne";
 import ContactUs from "./ContactUs";
 import Discover from "./Discover";
 import Explore from "./Explore";
@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <div>
-      <BannerOne></BannerOne>
+      {/* <BannerOne></BannerOne> */}
       <Gallery></Gallery>
       <Categories></Categories>
       <Price></Price>
