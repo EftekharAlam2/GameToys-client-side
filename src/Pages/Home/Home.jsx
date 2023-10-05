@@ -19,7 +19,6 @@ const Home = () => {
       <Price></Price>
       <Explore></Explore>
       <Discover></Discover>
-
       <Testimonials></Testimonials>
       <ContactUs></ContactUs>
     </div>

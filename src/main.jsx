@@ -15,7 +15,6 @@ import ToyDetails from "./SharedPage/ToyDetails";
 import PrivateRoute from "./Routes/PrivateRoute";
 import MyToy from "./Pages/MyToy/MyToy";
 import UpdateToy from "./Pages/MyToy/UpdateToy";
-import Blogs from "./Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -78,10 +77,6 @@ const router = createBrowserRouter([
           fetch(
             `https://b7a11-toy-marketplace-server-side-eftekhar-alam2.vercel.app/toys/${params.id}`
           ),
-      },
-      {
-        path: "/blogs",
-        element: <Blogs></Blogs>,
       },
     ],
   },
