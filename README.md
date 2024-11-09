@@ -1,51 +1,160 @@
-## [GameToys (Click)](https://video-gaming-toys.web.app/)
+# GameToys 🎮🧸
+
+[**Live Demo**](https://video-gaming-toys.web.app/)
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+  - [Navbar](#navbar)
+  - [Authentication](#authentication)
+  - [Private Routes](#private-routes)
+  - [Pages](#pages)
+    - [Add A Toy](#add-a-toy)
+    - [All Toys](#all-toys)
+    - [My Toys](#my-toys)
+    - [Toy Details](#toy-details)
+    - [404 Page](#404-page)
+  - [Sorting System](#sorting-system)
+- [Technologies Used](#technologies-used)
+- [Client-Side Repository](#client-side-repository)
+- [Server-Side Repository](#server-side-repository)
+- [Installation](#installation)
+- [License](#license)
+
+---
+
+## Introduction
+
+**GameToys** is an engaging platform for toy enthusiasts to discover, add, and manage toys. The application offers a smooth user experience with features like authentication, private routes, search, sorting, and dynamic content display. It's designed to provide a user-friendly interface for browsing and managing toy collections.
+
+---
 
 ## Features
 
-1. **Navbar:**
+### Navbar
+- **Dynamic Navigation**: Includes links like `Home`, `All Toys`, `My Toys`, `Add A Toy`, `Blogs`, and user profile.
+- **Conditional Rendering**:
+  - Displays `Add A Toy`, `My Toys`, and user profile options only when the user is logged in.
+  - Shows a `Login` button if the user is not logged in.
+- **User Profile**:
+  - Displays the user's profile picture with a hover tooltip showing the user's name (if available).
 
-   - Including a navbar with the website logo, website name, home, all toys, my toys, add a toy, blogs, and user profile picture.
-   - The user profile picture, add a toy, and my toys options in the navbar are conditionally displayed based on the user's login status.
-   - If the user is logged in, the profile picture is shown; otherwise, the login button is displayed.
-   - When hovering over the profile picture, displaying the user's name (if available).
+### Authentication
+- **Login & Registration**:
+  - Login page with fields for **Email/Password** and a **Google Sign-In** option.
+  - Registration page with fields for **Name**, **Email**, **Password**, and **Photo URL**.
+  - Displays relevant error messages for incorrect input.
+- **Protected Routes**:
+  - Certain pages are restricted to logged-in users only (e.g., `Add A Toy`, `My Toys`, `Toy Details`).
 
-2. **Login & Registration Systems:**
+### Private Routes
+The following pages are accessible only to authenticated users:
+- **Add A Toy**: Allows users to add new toys with details like picture URL, toy name, seller info, sub-category, price, rating, quantity, and description.
+- **My Toys**: Displays toys added by the logged-in user with options to **Update** or **Delete** them.
+- **Toy Details**: Shows detailed information about a specific toy.
 
-   - Implement login and registration functionality with relevant error messages.
-   - The login page includes fields for email/password and a Google sign-in option.
-   - Provide a link to the registration page.
-   - The registration page includes fields for name, email, password, and photo URL.
+### Pages
 
-3. **Add A Toy Page (Private Route):**
+#### Add A Toy
+- Accessible only to logged-in users.
+- Includes a form with fields for:
+  - **Picture URL**
+  - **Toy Name**
+  - **Seller Name** (auto-filled from user profile)
+  - **Seller Email** (auto-filled from user profile)
+  - **Sub-Category**
+  - **Price**
+  - **Rating**
+  - **Available Quantity**
+  - **Detail Description**
 
-   - Here is a private route for adding a toy to the website.
-   - The form includes fields for the picture URL, toy name, seller name (from the logged-in user), seller email (info from the logged-in user), sub-category, price, rating, available quantity, and detail description.
+#### All Toys
+- Displays all toys added by users in a tabular format.
+- Each row includes details like:
+  - **Seller Name**
+  - **Toy Name**
+  - **Sub-Category**
+  - **Price**
+  - **Available Quantity**
+- Includes a **Search** feature to find toys by name.
+- Implements pagination to show a maximum of 20 results per page.
 
-4. **All Toys Page:**
+#### My Toys
+- Displays toys added by the logged-in user in a tabular format.
+- Provides options to:
+  - **Update**: Edit toy details (price, quantity, description).
+  - **Delete**: Remove a toy with a confirmation prompt.
 
-   - Here is a page that displays all the toys added by users in a tabular form.
-   - Each row includes information such as the seller (if available), toy name, sub-category, price, available quantity, and a view details button.
-   - Also, here is implement a search system based on the toy name.
-   - Now, there is a maximum of 20 results by default using pagination or limit.
+#### Toy Details
+- Shows detailed information about a specific toy, including:
+  - **Picture**
+  - **Toy Name**
+  - **Seller Name & Email**
+  - **Price**
+  - **Rating**
+  - **Available Quantity**
+  - **Description**
 
-5. **My Toys Page (Private Route):**
+#### 404 Page
+- Custom 404 error page with an interesting image or GIF.
+- Includes a **Back to Home** button.
+- The header and footer are excluded on this page for a cleaner look.
 
-   - Here is a private route for the logged-in users to view and manage their added toys.
-   - Displaying all the toys added by the user in a tabular form.
-   - Each row includes buttons for updating and deleting the toy.
-   - The update button allows the user to modify the toy's price, available quantity, and detail description.
-   - The delete button removes the toy from the list, with a confirmation prompt.
+### Sorting System
+- **My Toys Page** includes a sorting feature to arrange toys in ascending or descending order based on **Price**.
 
-6. **Single Toy Details (Private Route):**
+---
 
-   - Creating a private route for viewing the details of a specific toy (/toy/:id).
-   - Displaying information such as the picture, toy name, seller name, seller email, price, rating, available quantity, and detail description.
+## Technologies Used
+- **Frontend**: React + Vite, Tailwind CSS
+- **Authentication**: Firebase
+- **Routing**: React Router
+- **State Management**: React Context API
 
-7. **404 Page:**
+---
 
-   - Creating a custom 404 page with an interesting image or GIF.
-   - Including a "Back to Home" button that redirects the user to the home page.
-   - Excluding the header and footer from this page.
+## Client-Side Repository
+This repository contains the code for the **client-side** of the GameToys application.
 
-8. **Sorting System on My Toys Page:**
-   - Implement a sorting system on the My Toys page to sort the toys in ascending or descending order based on price.
+- **Client-Side Repo**: [GameToys Client](https://github.com/EftekharAlam2/GameToys-client-side.git)
+
+## Server-Side Repository
+The server-side code, including database and API integrations, is available in a separate repository.
+
+- **Server-Side Repo**: [GameToys Server](https://github.com/EftekharAlam2/GameToys-server-side.git)
+
+---
+
+## Installation
+
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/EftekharAlam2/GameToys-client-side.git
+    cd gametoys-client
+    ```
+
+2. **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+
+3. **Create a `.env` File**:
+    - Add your Firebase configuration:
+      ```
+      VITE_FIREBASE_API_KEY=your_api_key
+      VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+      VITE_FIREBASE_PROJECT_ID=your_project_id
+      VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+      VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+      VITE_FIREBASE_APP_ID=your_app_id
+      ```
+
+4. **Run the Application**:
+    ```bash
+    npm run dev
+    ```
+
+5. **Build for Production**:
+    ```bash
+    npm run build
+    ```
