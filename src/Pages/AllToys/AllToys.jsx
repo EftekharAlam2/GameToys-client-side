@@ -71,7 +71,7 @@ const AllToys = () => {
                   <td className="py-2 px-4">{toy.quantity}</td>
                   <td className="py-2 px-4">
                     <Link to={`/toydetails/${toy._id}`}>
-                      <button className="btn btn-outline btn-warning text-white py-2 px-4 rounded-lg">
+                      <button className="btn btn-outline btn-success text-white py-2 px-4 rounded-lg">
                         View Details
                       </button>
                     </Link>
@@ -87,7 +87,7 @@ const AllToys = () => {
           <button
             key={number}
             onClick={() => setCurrentPage(number)}
-            className="btn btn-outline btn-warning border rounded-md py-1 px-5 mx-1"
+            className="btn btn-outline btn-success border rounded-md py-1 px-5 mx-1"
           >
             {number}
           </button>

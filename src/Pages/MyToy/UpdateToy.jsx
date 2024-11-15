@@ -91,7 +91,7 @@ const UpdateToy = () => {
         </div>
         <button
           type="submit"
-          className="btn btn-outline btn-warning text-white py-2 px-4 rounded-lg"
+          className="btn btn-outline btn-success text-white py-2 px-4 rounded-lg"
         >
           Update
         </button>

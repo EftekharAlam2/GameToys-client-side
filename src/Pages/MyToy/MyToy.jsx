@@ -67,7 +67,7 @@ const MyToy = () => {
                 <td className="py-2 px-4">{toy.quantity}</td>
                 <td className="py-2 px-4">
                   <Link to={`/toydetails/${toy._id}`}>
-                    <button className="btn btn-outline btn-warning text-white py-2 px-4 rounded-lg">
+                    <button className="btn btn-outline btn-success text-white py-2 px-4 rounded-lg">
                       View Details
                     </button>
                   </Link>

@@ -10,7 +10,7 @@ export default function ErrorPage() {
         </div>
       </div>
       <Link to="/">
-        <button className="btn btn-outline btn-warning">
+        <button className="btn btn-outline btn-success">
           Going to Home Page
         </button>
       </Link>

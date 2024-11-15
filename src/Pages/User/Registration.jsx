@@ -106,7 +106,7 @@ const Registration = () => {
           </div>
           <button
             type="submit"
-            className="btn btn-outline btn-warning text-white font-bold py-2 px-4 rounded-lg w-full"
+            className="btn btn-outline btn-success text-white font-bold py-2 px-4 rounded-lg w-full"
           >
             Register
           </button>
